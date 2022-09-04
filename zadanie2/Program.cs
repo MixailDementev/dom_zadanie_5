@@ -11,7 +11,7 @@ int[] EnterArray()
     int[] arr = new int[number];
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(0, 100);
+        arr[i] = new Random().Next(-100, 100);
     }
     Console.WriteLine($"You Array: {String.Join(", ", arr)}");
     return arr;
@@ -22,12 +22,12 @@ void SumOfOddElements(int[] arr)
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] % 2 == 0)
+        if (i % 2 != 0)
         {
-            count++;
+            sum += arr[i];
         }
     }
-    Console.WriteLine($"Count even elements:\t" + count);
+    Console.WriteLine($"sum of odd elements:\t" + sum);
 }
-NumberOfEvenElements(EnterArray());
+SumOfOddElements(EnterArray());
 
